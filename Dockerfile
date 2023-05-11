@@ -12,6 +12,6 @@ RUN npm install --legacy-peer-deps && mv node_modules ../
 
 COPY . .
 
-EXPOSE 3000
+# EXPOSE 3000
 
 CMD npm start

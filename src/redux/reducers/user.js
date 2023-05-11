@@ -8,13 +8,9 @@ import {
 } from '@reduxjs/toolkit';
 
 const userInitialState = {
-    id: '',
     email: '',
-    firstname: '',
-    lastname: '',
-    city: '',
-    country: '',
-    institution: '',
+    username: '',
+    birthdate: '',
     token: '',
 }
 
@@ -31,40 +27,26 @@ const userSlice = createSlice({
         signUp: (state, action) => {
             return {
                 ...state,
-                id: action.payload.id,
                 email: action.payload.email,
-                firstname: action.payload.firstname,
-                lastname: action.payload.lastname,
-                city: action.payload.city,
-                country: action.payload.country,
-                institution: action.payload.institution,
+                username: action.payload.username,
+                birthdate: action.payload.birthdate,
                 token: 'created'
             }
         },
         update: (state, action) => {
-            console.log("action.payload: ", action.payload);
-            console.log("state: ", state);
             return {
                 ...state,
-                id: action.payload.id,
                 email: action.payload.email,
-                firstname: action.payload.firstname,
-                lastname: action.payload.lastname,
-                city: action.payload.city,
-                country: action.payload.country,
-                institution: action.payload.institution,
+                username: action.payload.username,
+                birthdate: action.payload.birthdate,
             }
         },
         whoAmI: (state, action) => {
             return {
                 ...state,
-                id: action.payload.id,
-                email: action.payload.email, 
-                firstname: action.payload.firstname,
-                lastname: action.payload.lastname,
-                city: action.payload.city,
-                country: action.payload.country,
-                institution: action.payload.institution,
+                email: action.payload.email,
+                username: action.payload.username,
+                birthdate: action.payload.birthdate,
                 
             };
         },

@@ -3,15 +3,12 @@ import {BACKEND_API_URL} from './api'
 import { store } from '../redux';
 
 
-export const SignUp = async ( firstname, lastname, email, password, institution, city, country) =>  { // Registro de usuario en la plataforma.
+export const SignUp = async ( username, email, password, birthDate) =>  { // Registro de usuario en la plataforma.
   let formData = new FormData();
-  formData.append('firstname', firstname);
-  formData.append('lastname', lastname);
+  formData.append('username', username);
   formData.append('email', email);
   formData.append('password', password);
-  formData.append('institution', institution);
-  formData.append('city', city);
-  formData.append('country', country);
+  formData.append('birthdate', birthDate);
   
   let result = await axios.post(BACKEND_API_URL + '/register', formData, {
     headers: {
@@ -24,13 +21,14 @@ export const SignUp = async ( firstname, lastname, email, password, institution,
 
 
 export const  SignIn = async (email, password) => {  // Inicio de sesión de usuario en la plataforma.
-  let formData = new FormData();
-  formData.append('email', email);
-  formData.append('password', password);
+  // let formData = new FormData();
+  // formData.append('email', email);
+  // formData.append('password', password);
   
-  let result = await axios.post(BACKEND_API_URL + '/login', formData, {
-    headers: {
-        'Content-Type': 'application/json'
+  let result = await axios.get(BACKEND_API_URL + '/login', {
+    params: {
+      username: email,
+      password: password
     }});
   return {
     token: result.data.access_token
@@ -38,20 +36,16 @@ export const  SignIn = async (email, password) => {  // Inicio de sesión de usu
 }
 
 export const WhoIAm = async (token) => { // Obtener información del usuario.
-  let result = await axios.get(BACKEND_API_URL + '/who', {
+  let result = await axios.get(BACKEND_API_URL + '/user', {
     headers: {
-        'Authorization': 'Bearer ' + token
+      'Authorization': 'Bearer ' + token
     }
   });
   
   return {
-    id: result.data.id, 
-    email: result.data.email,
-    firstname: result.data.firstname,
-    lastname: result.data.lastname,
-    institution: result.data.institution,
-    city: result.data.city,
-    country: result.data.country
+    email: result.data.profile.mail,
+    username: result.data.profile.username,
+    birthdate: result.data.profile.birthday.$date
   } 
 }
 
