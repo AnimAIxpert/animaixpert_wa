@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 // reactstrap components
 import {
@@ -28,10 +28,10 @@ import TransparentFooter from "components/Footers/TransparentFooter.js";
 import { useHistory } from "react-router-dom";
 
 function LoginPage() {
-  const [usernameFocus, setUsernameFocus] = React.useState(false);
-  const [passwordFocus, setPasswordFocus] = React.useState(false);
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
+  const [usernameFocus, setUsernameFocus] = useState(false);
+  const [passwordFocus, setPasswordFocus] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -41,7 +41,7 @@ function LoginPage() {
     dispatch(signIn(result)); 
     let result_who = await WhoIAm(store.getState().user.token)
     dispatch(whoAmI(result_who));
-    history.push("/profile-page");
+    history.push("/home-page");
     // console.log("username: " + username);
     // console.log("password: " + password);
   }
@@ -76,7 +76,7 @@ function LoginPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/now-logo.png")}
+                        src={require("assets/img/animAIxpert-logo.png")}
                       ></img>
                     </div>
                   </CardHeader>
@@ -134,8 +134,7 @@ function LoginPage() {
                       <h6>
                         <a
                           className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
+                          href="/register-page"
                         >
                           Create Account
                         </a>
@@ -145,10 +144,9 @@ function LoginPage() {
                       <h6>
                         <a
                           className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
+                          href="/"
                         >
-                          Need Help?
+                          Home
                         </a>
                       </h6>
                     </div>
@@ -156,6 +154,7 @@ function LoginPage() {
                 </Form>
               </Card>
             </Col>
+            
           </Container>
         </div>
         <TransparentFooter />

@@ -32,6 +32,7 @@ import LandingPage from "views/examples/LandingPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage";
 import HomePage from "views/HomePage";
+import AnimeDetails from "views/AnimeDetails";
 import { store } from "./redux";
 import { Provider } from 'react-redux'
 
@@ -44,6 +45,7 @@ root.render(
       <Switch>
         <Switch>
           <Route path="/index" render={(props) => <Index {...props} />} />
+          <Route path="/anime/:id" render={(props) => <AnimeDetails {...props} />} />
           <Route
             path="/nucleo-icons"
             render={(props) => <NucleoIcons {...props} />}
@@ -68,8 +70,9 @@ root.render(
             path="/home-page"
             render={(props) => <HomePage {...props}/>}
           />
-          <Redirect to="/index" />
-          <Redirect from="/" to="/index" />
+          <Redirect to="/home-page" />
+          <Redirect from="/" to="/home-page" />
+          <Redirect from="/index" to="/home-page" />
         </Switch>
       </Switch>
     </BrowserRouter>

@@ -3558,7 +3558,7 @@ body {
 
 .main {
   position: relative;
-  background: #ffffff;
+  background: #d7f9f9;
 }
 
 /* Animations */
@@ -5132,6 +5132,8 @@ img {
   display: block;
 }
 
+
+
 .carousel .carousel-inner {
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
   border-radius: 0.1875rem;
@@ -5188,6 +5190,7 @@ img {
   width: 100%;
   margin-bottom: 30px;
   box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+  background-color: #1da2ff;
 }
 .card .card-header {
   background-color: transparent;

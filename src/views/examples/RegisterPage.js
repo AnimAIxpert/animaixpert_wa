@@ -57,7 +57,6 @@ function RegisterPage() {
     let result_who = await WhoIAm(store.getState().user.token)
     dispatch(whoAmI(result_who));
     history.push("/profile-page");
-    
   }
 
   React.useEffect(() => {
@@ -78,7 +77,7 @@ function RegisterPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
+            backgroundImage: "url(" + require("assets/img/register.jpg") + ")"
           }}
         ></div>
         <div className="content">
@@ -90,7 +89,7 @@ function RegisterPage() {
                     <div className="logo-container">
                       <img
                         alt="..."
-                        src={require("assets/img/now-logo.png")}
+                        src={require("assets/img/animAIxpert-logo.png")}
                       ></img>
                     </div>
                   </CardHeader>
@@ -205,8 +204,7 @@ function RegisterPage() {
                       <h6>
                         <a
                           className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
+                          href="/login-page"
                         >
                           Login
                         </a>
@@ -216,10 +214,9 @@ function RegisterPage() {
                       <h6>
                         <a
                           className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
+                          href="/"
                         >
-                          Need Help?
+                          home
                         </a>
                       </h6>
                     </div>

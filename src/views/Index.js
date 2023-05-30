@@ -40,9 +40,9 @@ function Index() {
   return (
     <>
       <IndexNavbar />
-      <div className="wrapper">
+      <div className="wrapper" >
         <IndexHeader />
-        <div className="main">
+        <div className="main" style={{backgroundColor: '#5e8de1'}}>
           <Images />
           <BasicElements />
           <Navbars />
