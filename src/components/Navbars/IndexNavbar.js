@@ -27,7 +27,7 @@ function IndexNavbar() {
                   <Nav className="ml-auto" navbar>
                     {store.getState().user.token ? (<NavItem>
                       <NavLink
-                        href="#pablo"
+                        href="profile-page"
                       >
                         <i className="now-ui-icons users_circle-08"></i>
                         <p>Profile</p>
@@ -44,7 +44,7 @@ function IndexNavbar() {
                       
                       )
                     }
-                    {store.getState().user.token ? "" 
+                    {store.getState().user.token ? () => "" 
                     (<NavItem>
                       <NavLink
                         href="/register-page"

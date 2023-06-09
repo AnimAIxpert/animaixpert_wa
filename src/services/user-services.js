@@ -35,17 +35,16 @@ export const  SignIn = async (email, password) => {  // Inicio de sesión de usu
   } 
 }
 
-export const WhoIAm = async (token) => { // Obtener información del usuario.
+export const WhoAmI = async (token) => { // Obtener información del usuario.
   let result = await axios.get(BACKEND_API_URL + '/user', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
   });
-  
   return {
     email: result.data.profile.mail,
     username: result.data.profile.username,
-    birthdate: result.data.profile.birthday.$date
+    birthdate: result.data.profile.birthdate['$date']
   } 
 }
 

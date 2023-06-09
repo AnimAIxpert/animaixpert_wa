@@ -18,7 +18,7 @@ import {
 
 import store from '../../redux/store';
 import { useDispatch } from 'react-redux';
-import { SignIn, WhoIAm } from "services";
+import { SignIn, WhoAmI } from "services";
 import { signIn, whoAmI } from "../../redux";
 
 // core components
@@ -54,7 +54,7 @@ function RegisterPage() {
     console.log(register_result);
     let result = await SignIn(username, password);
     dispatch(signIn(result)); 
-    let result_who = await WhoIAm(store.getState().user.token)
+    let result_who = await WhoAmI(store.getState().user.token)
     dispatch(whoAmI(result_who));
     history.push("/profile-page");
   }

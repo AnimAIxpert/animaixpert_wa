@@ -18,7 +18,7 @@ import {
 
 import store from '../../redux/store';
 import { useDispatch } from 'react-redux';
-import { SignIn, WhoIAm } from "services";
+import { SignIn, WhoAmI } from "services";
 import { signIn, whoAmI } from "../../redux";
 
 
@@ -39,7 +39,9 @@ function LoginPage() {
   const handleLogin = async (e) => {
     let result = await SignIn(username, password)
     dispatch(signIn(result)); 
-    let result_who = await WhoIAm(store.getState().user.token)
+    let result_who = await WhoAmI(store.getState().user.token)
+    // console.log("Result Who: ")
+    // console.log(result_who)
     dispatch(whoAmI(result_who));
     history.push("/home-page");
     // console.log("username: " + username);

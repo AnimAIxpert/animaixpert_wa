@@ -42,7 +42,7 @@ function Index() {
       <IndexNavbar />
       <div className="wrapper" >
         <IndexHeader />
-        <div className="main" style={{backgroundColor: '#5e8de1'}}>
+        <div className="main" >
           <Images />
           <BasicElements />
           <Navbars />

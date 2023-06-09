@@ -13,6 +13,17 @@ export const getAnimeByGenre = async (genre, n_animes) => {
     return result.data
 }
 
+export const getTopAnimeByGenre = async (genre, n_animes) => {
+    let result = await axios.get(BACKEND_API_URL + '/anime-top', {
+        params: {
+            genre: genre,
+            limit: n_animes
+        }
+    });
+    // console.log(result.data)
+    return result.data
+}
+
 export const getAnimeById = async (id) => {
     let result = await axios.get(BACKEND_API_URL + '/anime', {
         params: {
