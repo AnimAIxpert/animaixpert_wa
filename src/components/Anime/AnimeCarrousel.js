@@ -113,6 +113,7 @@ function AnimeCarrousel(props){
     return(
         <Container style={{
           maxWidth: '100%',
+          
           // background: 'deepskyblue'
         }}>
           <center><h1 style={{

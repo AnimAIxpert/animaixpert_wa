@@ -11,6 +11,8 @@ function AnimeCard(props){
                 width: '16rem',
                 height: '22rem',
                 alignItems: 'center',
+                background: 'rgba(0,0,0,.6)',
+                color: 'white',
             }}
             >
             <img
@@ -23,7 +25,7 @@ function AnimeCard(props){
                 
             />
             <CardBody>
-                <CardTitle tag="h6">
+                <CardTitle tag="h6" >
                 {props.anime_name}
                 </CardTitle>
             </CardBody>

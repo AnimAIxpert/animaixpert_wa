@@ -58,7 +58,7 @@ function AnimeCardComplete(properties){
         
             
             <Card 
-            style={{background: 'transparent',color: 'white', }}
+            style={{background: 'rgba(0,0,0,.6)',color: 'white', }}
             >
                 <CardHeader style={{
                     height: 'fit-content',

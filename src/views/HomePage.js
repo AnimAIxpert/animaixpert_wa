@@ -83,11 +83,12 @@ function Index() {
         </div>
           <div className="wrapper" >
           <div className="main" > */}
-          <div className="page-header-image"
+          <div 
+          className="page-header-image"
             style={{
               backgroundImage: "url(" + require("assets/img/home.jpg") + ")"
             }}>
-            
+            <div style={{height: "100px"}}></div>
             {catalogue.length !== 0  ? catalogue.map( (anime_list, i) => createCarrousel(anime_list, i)) : "Loading..."}
             
           <DarkFooter />

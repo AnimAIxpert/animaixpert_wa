@@ -36,9 +36,11 @@ function AnimeDetails(props){
             <div
             className="page-header-image"
             style={{
-                backgroundImage: "url(" + require("assets/img/details.jpg") + ")"
+                backgroundImage: "url(" + require("assets/img/details.jpg") + ")",
+                backgroundSize: "100% 100%",
             }}
             >
+                <div style={{height: "100px"}}></div>
                 <Container>
 
                     {Object.keys(anime).length === 0  ? "" : <AnimeCardComplete {...anime} />}
