@@ -38,7 +38,7 @@ function Index() {
   useEffect(() => {
     var fetchs = [];
     for (var genre of genres) {
-      fetchs.push(getTopAnimeByGenre(genre, 12));
+      fetchs.push(getTopAnimeByGenre(genre, 36));
     }
     // console.log(fetchs);
     Promise.all(fetchs).then((values) => {
@@ -86,7 +86,8 @@ function Index() {
           <div 
           className="page-header-image"
             style={{
-              backgroundImage: "url(" + require("assets/img/home.jpg") + ")"
+              backgroundImage: "url(" + require("assets/img/home.jpg") + ")",
+              backgroundSize: "cover"
             }}>
             <div style={{height: "100px"}}></div>
             {catalogue.length !== 0  ? catalogue.map( (anime_list, i) => createCarrousel(anime_list, i)) : "Loading..."}

@@ -23,6 +23,16 @@ export const getAllRatings = async () => {
     return result.data
 }
 
+export const getAllRatingsByUserId = async (user_id) => {
+    console.log("user_id: " + user_id)
+    let result = await axios.get(BACKEND_API_URL + '/get-ratings-by-user/' , {
+        params: {
+            user_id: user_id,
+        }
+    });
+    return result.data
+}
+
 export const getRatingByIds = async (user_id, anime_id) => {
     let result = await axios.get(BACKEND_API_URL + '/get-rating-by-ids/' , {
         params: {
