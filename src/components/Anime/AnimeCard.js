@@ -4,6 +4,8 @@ import React from "react";
 import { Card, CardBody, CardTitle } from "reactstrap";
 import { Link } from "react-router-dom";
 function AnimeCard(props){
+    // console.log(props.image_path);
+    const image_path = props.image_path ? props.image_path : "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930";
     return(
         <Link to={`/anime/${props.id}`}>
         <Card
@@ -21,7 +23,7 @@ function AnimeCard(props){
                     height: '80%',
                 }}
                 alt={props.anime_name}
-                src={props.image_path}
+                src={image_path}
                 
             />
             <CardBody>
