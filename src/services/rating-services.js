@@ -25,7 +25,7 @@ export const getAllRatings = async () => {
 
 export const getAllRatingsByUserId = async (user_id) => {
     console.log("user_id: " + user_id)
-    let result = await axios.get(BACKEND_API_URL + '/get-ratings-by-user/' , {
+    let result = await axios.get(BACKEND_API_URL + '/get-ratings-by-user' , {
         params: {
             user_id: user_id,
         }
@@ -34,7 +34,7 @@ export const getAllRatingsByUserId = async (user_id) => {
 }
 
 export const getRatingByIds = async (user_id, anime_id) => {
-    let result = await axios.get(BACKEND_API_URL + '/get-rating-by-ids/' , {
+    let result = await axios.get(BACKEND_API_URL + '/get-rating-by-ids' , {
         params: {
             user_id: user_id,
             anime_id: anime_id
